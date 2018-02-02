@@ -1,5 +1,9 @@
 # upcoming_retreats
 
-This project was an excercise in web scraping with Python's Beautiful Soup module.
-The goal was to build a simple website that displays all 10-day S.N. Goenka style Vipassana retreats in the continental US.
-This was achieved by first parsing out the 10-day retreat contents from each meditation center's website and aggregating the results into a file to be rendered.
+This project was built for good fun as an excercise in web scraping via Python's Beautiful Soup module.
+
+
+The idea was to build a simple website that houses the data of all continental US 10-day Vipassana retreats.
+
+## Key Details
+The project was accomplished fairly quickly due to the awesomeness of <a href="https://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a> and the consistent design behind each meditation center's website. The back-end worked by first parsing the relevant data of each 10-day retreat, regardless of location. Then, the content is sorted by a numerical inventory unit based on the starting date of each retreat. Next, this information is passed on to the front-end which preloads a HTML stub (with pre-styled CSS features) and appends the scraped data as HTML table data points. The HTML table is subsequently followed with a footer (which includes my non-affiliated disclaimer!) to seal up the content. Finally, the content is then passed back to Beautiful Soup to be prettified and written to the index.html file. All is well after that :).
