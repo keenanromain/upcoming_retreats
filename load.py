@@ -59,9 +59,7 @@ def prewritten_html():
     </thead>
     <tbody>
     '''
-    #	ends with </tbody></table></body></html>
-    #   add a footer with links to disclaimer of non-affiliation, github source code
-    #   and credits to logomakr
+
 def html_footer():
     return '''
     </tbody>

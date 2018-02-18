@@ -95,6 +95,16 @@ def main():
         rows = page_soup.findAll("tr", {"class":"10-Day"})
 
         for row in rows:
+            #parsing course status
+            status = ""
+            for span in row.findAll({'span'})[2:]:
+                status += span.text
+                if span.text[-1] != '.':
+                    status += '.'
+                status += '\n'
+            if "Completed" in status:
+                continue
+
             #parsing application link
             if 'apply' in row.a.text.lower():
                 course_link = str(row.a)
@@ -117,14 +127,6 @@ def main():
 
             #parsing end date
             end_date = row.findAll({'span'})[1].text
-
-            #parsing course status
-            status = ""
-            for span in row.findAll({'span'})[2:]:
-                status += span.text
-                if span.text[-1] != '.':
-                    status += '.'
-                status += '\n'
 
             #parsing course location
             location = row.findAll({'td'})[-2].text.strip()
